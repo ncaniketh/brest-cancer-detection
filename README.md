@@ -1,22 +1,32 @@
-# brest-cancer-detection
-     importing packages
+# Breast-cancer-classification
 
+Breast Cancer Classification using CNN and transfer learning
 
-import json
-import math
-import os
-import cv2
-from PIL import Image
+## Citing
 
-     READING DATA 
+If you find this code useful in your research, please consider citing the blog:
 
-#Transfer 'jpg' images to an array IMG
-def Dataset_loader(DIR, RESIZE, sigmaX=10):
-    IMG = []
-    read = lambda imname: np.asarray(Image.open(imname).convert("RGB"))
-    for IMAGE_NAME in tqdm(os.listdir(DIR)):
-  The dataset can be downloaded from here. This is a binary classification problem. I split the data as shown-
-  dataset train
+```
+@misc{sagarconvolutional,
+  Author = {Abhinav Sagar},
+  Title = {Convolutional Neural Network for Breast Cancer Classification},
+  Year = {2019},
+  Journal = {Towards Data Science},
+}
+```
+
+## IMPORTANT
+
+Absolutely, under NO circumstance, should one ever screen patients using computer vision software trained with this code (or any home made software for that matter). 
+
+Check out the corresponding medium blog post [https://towardsdatascience.com/convolutional-neural-network-for-breast-cancer-classification-52f1213dcc9](https://towardsdatascience.com/convolutional-neural-network-for-breast-cancer-classification-52f1213dcc9).
+
+## Data
+
+The dataset can be downloaded from [here](https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/). This is a binary classification problem. I split the data as shown-
+
+```
+dataset train
   benign
    b1.jpg
    b2.jpg
@@ -33,28 +43,83 @@ def Dataset_loader(DIR, RESIZE, sigmaX=10):
     m1.jpg
     m2.jpg
     //...
-    
-    Environment and tools
-Jupyter Notebook
-Numpy
-Pandas
-Scikit-image
-Matplotlib
-Scikit-learn
-Keras
+```    
 
-     #1.Input
-Input is a matrix of pixel values in the configuration of [WIDTH, HEIGHT, CHANNELS].
+## Environment and tools
 
-#2.Convolution Layer
-The objective of this layer is to sustain a feature map. Typically, we commence with a base estimate of filters for low-level feature detection. The more distant we go within CNN, the added filters we use to identify high-level features. Feature detection is based on ‘examining’ the input with a presented dimension filter and implementing matrix computations to infer a feature map.
+1. Jupyter Notebook
+2. Numpy
+3. Pandas
+4. Scikit-image
+5. Matplotlib
+6. Scikit-learn
+7. Keras
 
-     #3.Pooling Layer
-This layer aims to implement spatial variance, which means that the system will be proficient in identifying an object even when its appearance differs somehow. The pooling layer will do a downsampling procedure accompanying the spatial dimensions (width, height), resulting in the product such as [16x16x12] for pooling_size=(2, 2).
+## Installation
 
-     #4.Fully Connected Layer
-In a fully connected layer, we flatten the product of the end convolution layer and combine every node of the prevailing layer with the separate nodes of the subsequent layer.
+`pip install numpy pandas scikit-image matplotlib scikit-learn keras`
 
-     Implementation
-First, we load all the libraries and packages.
+`jupyter notebook`
 
+## Model
+
+![model](images/image6.png)
+
+## Results
+
+### Loss/Accuracy vs Epoch
+
+![loss/accuracy](images/image1.png)
+
+![loss/accuracy](images/image2.png)
+
+### Confusion Matrix
+
+![roc-auc](images/image3.png)
+
+### ROC-AUC curve
+
+![roc-auc](images/image4.png)
+
+### Correct/Incorrect classification samples
+
+![results](images/image5.png)
+
+
+![results](images/image7.png)
+
+The model is able to reach a validation accuracy of 98.3%, precision 0.65, recall 0.95, f1 score of 0.77 and ROC-AUC as 0.692.
+
+## References
+
+1. https://peerj.com/articles/6201.pdf
+
+2. https://arxiv.org/pdf/1811.04241
+
+3. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6440620/
+
+## License
+
+```
+MIT License
+
+Copyright (c) 2019 Abhinav Sagar
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
