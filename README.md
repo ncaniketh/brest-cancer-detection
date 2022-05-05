@@ -43,7 +43,7 @@ Matplotlib
 Scikit-learn
 Keras
 
-Installation
+    Installation
 pip install numpy pandas scikit-image matplotlib scikit-learn keras
 
 jupyter notebook
@@ -51,7 +51,7 @@ jupyter notebook
 Model
 model
 
-Results
+     Results
 Loss/Accuracy vs Epoch
 loss/accuracy
 
