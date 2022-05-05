@@ -8,9 +8,39 @@ If you find this code useful in your research, please consider citing the blog:
 
 ## STEPS
 
-Absolutely, under NO circumstance, should one ever screen patients using computer vision software trained with this code (or any home made software for that matter). 
 
-Check out the corresponding medium blog post [https://towardsdatascience.com/convolutional-neural-network-for-breast-cancer-classification-52f1213dcc9](https://towardsdatascience.com/convolutional-neural-network-for-breast-cancer-classification-52f1213dcc9).
+      Problem Statement
+Breast cancer is the second most frequent cancer in women and men globally. In 2012, it factored about 12 percent of all latest cancer cases and 25 percent of women’s total cancers.
+
+Breast cancer arises when cells in the breast start to develop out of control. These cells usually grow a tumor that can frequently be seen on an x-ray or considered a lump. The tumor is malignant (cancer) if the cells can expand into (invade) encompassing tissues or increase (metastasize) to different sections of the body.
+
+     The Hurdle
+Construct an algorithm to automatically classify whether a victim is experiencing breast cancer or not by studying biopsy photographs.
+
+     Downloading DataSet
+The data for the plan can be obtained here. It is a binary classification problem.
+
+We have 277,524 samples with dimensions 50 x 50 (198,738 IDC negative and 78,786 IDC positive)
+
+Loading Image
+Become a Full-Stack Data Scientist
+Get Flat INR 8500 ($112) OFF + 4- Data Engineering Courses Absolutely FREE
+breast cancer classification dataset
+Source: https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/
+Where (a & b) belongs to Benign Samples and (c & d) belongs to Malignant Samples.
+
+     Deep Learning To Rescue
+ 1.Input
+Input is a matrix of pixel values in the configuration of [WIDTH, HEIGHT, CHANNELS].
+
+     2.Convolution Layer
+The objective of this layer is to sustain a feature map. Typically, we commence with a base estimate of filters for low-level feature detection. The more distant we go within CNN, the added filters we use to identify high-level features. Feature detection is based on ‘examining’ the input with a presented dimension filter and implementing matrix computations to infer a feature map.
+
+     3.Pooling Layer
+This layer aims to implement spatial variance, which means that the system will be proficient in identifying an object even when its appearance differs somehow. The pooling layer will do a downsampling procedure accompanying the spatial dimensions (width, height), resulting in the product such as [16x16x12] for pooling_size=(2, 2).
+
+    4.Fully Connected Layer
+In a fully connected layer, we flatten the product of the end convolution layer and combine every node of the prevailing layer with the separate nodes of the subsequent layer.
 
 ## Data
 
