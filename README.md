@@ -42,10 +42,9 @@ def Dataset_loader(DIR, RESIZE, sigmaX=10):
         _, ftype = os.path.splitext(PATH)
         if ftype == ".png":
             img = read(PATH)
-           
             img = cv2.resize(img, (RESIZE,RESIZE))
            
-            IMG.append(np.array(img))
+ IMG.append(np.array(img))
     return IMG
 
 benign_train = np.array(Dataset_loader('data/train/benign',224))
