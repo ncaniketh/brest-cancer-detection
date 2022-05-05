@@ -1,8 +1,10 @@
 # brest-cancer-detection
+importing packages
+
+
 import json
 import math
 import os
-
 import cv2
 from PIL import Image
 import numpy as np
@@ -28,6 +30,7 @@ from collections import Counter
 import json
 import itertools
 
+reading the data images 
 
 %matplotlib inline
 #Transfer 'jpg' images to an array IMG
